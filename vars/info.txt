@@ -1,0 +1,2 @@
+After a quick sniff on http://www.ridracoli.it/ I found out that the data are provided from
+this url: https://www.romagnacque.it/datidiretta/index2.php
