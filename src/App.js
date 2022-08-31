@@ -3,7 +3,6 @@ import './App.css';
 
 
 const App = () => {
-  const [livelloInvaso, setLivelloInvaso] = useState("");
   const [ridracoliObj, setRidracoliObj] = useState({});
 
   useEffect(() => {
@@ -14,8 +13,7 @@ const App = () => {
         const response = await fetch(url);
         const json = await response.json();
         console.log(json.livello_invaso);
-        setLivelloInvaso(json.livello_invaso);
-        setRidracoliObj(json.ridraccoli);
+        setRidracoliObj(json);
 
       } catch (error) {
         console.log("Cannot get error data !", error);
@@ -25,15 +23,20 @@ const App = () => {
     fetchData();
   }, []);
 
+  var maxVolumeLevel = 33060000;
+  var currentVolumeLevel = ridracoliObj.volumeInvaso;
+  const percVolumeLevel = Math.round(currentVolumeLevel * 100 / maxVolumeLevel).toFixed(2);
+
   return (
     <div className="App">
       <header className="App-header">
-      <h1>Fetch Data from an API</h1>
-      <p>Livello invaso: {livelloInvaso}</p>
-      <p>deflussiVolumeTotale: {ridracoliObj.deflussiVolumeTotale}</p>
-      <p>condizioniAtmosferiche: {ridracoliObj.condizioniAtmosferiche}</p>
-
-      
+      <h1>Diga di ridracoli</h1>
+      <p>Livello invaso: {ridracoliObj.livelloInvaso}</p>
+      {/* <p>deflussiVolumeTotale: {ridracoliObj.ridraccoli.deflussiVolumeTotale}</p>
+      <p>condizioniAtmosferiche: {ridracoliObj.ridraccoli.condizioniAtmosferiche}</p>
+       */}
+       <p>currentVolumeLevel = {currentVolumeLevel}</p>
+       <p>Percentuale invaso: {percVolumeLevel} % </p>
       </header>
     </div>
   );
