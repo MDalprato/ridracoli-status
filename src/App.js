@@ -4,6 +4,7 @@ import './App.css';
 
 const App = () => {
   const [ridracoliObj, setRidracoliObj] = useState({});
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     const url = "https://www.romagnacque.it/datidiretta/index2.php";
@@ -14,6 +15,7 @@ const App = () => {
         const json = await response.json();
         console.log(json.livello_invaso);
         setRidracoliObj(json);
+        setIsLoading(false);
 
       } catch (error) {
         console.log("Cannot get error data !", error);
@@ -23,12 +25,19 @@ const App = () => {
     fetchData();
   }, []);
 
+
+  if (isLoading) {
+    return (<p>Loading ...</p>)
+  }
+
   var maxVolumeLevel = 33060000;
   var currentVolumeLevel = ridracoliObj.volumeInvaso;
   const percVolumeLevel = Math.round(currentVolumeLevel * 100 / maxVolumeLevel).toFixed(2);
   const percVolumeLevelForGauge = Math.round(currentVolumeLevel * 100 / maxVolumeLevel).toFixed(2) / 100;
 
   const tempAirForGauge = ridracoliObj.idrometeoRidraccoli.CtemperaturaAria / 100;
+
+
 
   return (
     <div className="App">
@@ -58,6 +67,7 @@ const App = () => {
           <GaugeChart id="gauge-chart2"
             nrOfLevels={10}
             percent={tempAirForGauge}
+            formatTextValue={value => value + '°C'}
           />
         </div>
       </div>
