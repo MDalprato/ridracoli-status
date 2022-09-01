@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/ridracoli-status/static/css/main.2de6e0c4.css",
-    "main.js": "/ridracoli-status/static/js/main.0b45344c.js",
+    "main.css": "/ridracoli-status/static/css/main.7f3149b1.css",
+    "main.js": "/ridracoli-status/static/js/main.051e17a9.js",
     "static/js/787.8a8cb8a4.chunk.js": "/ridracoli-status/static/js/787.8a8cb8a4.chunk.js",
     "index.html": "/ridracoli-status/index.html",
-    "main.2de6e0c4.css.map": "/ridracoli-status/static/css/main.2de6e0c4.css.map",
-    "main.0b45344c.js.map": "/ridracoli-status/static/js/main.0b45344c.js.map",
+    "main.7f3149b1.css.map": "/ridracoli-status/static/css/main.7f3149b1.css.map",
+    "main.051e17a9.js.map": "/ridracoli-status/static/js/main.051e17a9.js.map",
     "787.8a8cb8a4.chunk.js.map": "/ridracoli-status/static/js/787.8a8cb8a4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2de6e0c4.css",
-    "static/js/main.0b45344c.js"
+    "static/css/main.7f3149b1.css",
+    "static/js/main.051e17a9.js"
   ]
 }
