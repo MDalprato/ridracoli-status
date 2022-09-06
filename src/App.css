@@ -1,3 +1,7 @@
+body{
+  background-color: #282c34;
+
+}
 .App {
   display: flex;
   flex-direction: column;
@@ -12,7 +16,6 @@
   justify-content: center;
   flex-wrap: wrap;
   background-color: #282c34;
-  border: 1px solid red;
 }
 
 .info {
@@ -24,5 +27,9 @@
 
 .char {
   flex: 1 1 100px;
+  color: white;
+}
+
+.percentage-char{
   color: white;
 }
