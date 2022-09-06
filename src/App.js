@@ -41,10 +41,14 @@ const App = () => {
 
   return (
     <div className="App">
+      <div className="title">
+        <h1>Diga di Ridracoli</h1>
+      </div>
       <div className="volume-info">
         <div className="info">
-          <p>Livello invaso: {ridracoliObj.livelloInvaso} m</p>
-          <p>Livello volume = {currentVolumeLevel} s.l.m</p>
+          <p>Livello invaso: {ridracoliObj.livelloInvaso}  m.s.l.m.</p>
+          <p>Volume Invaso = {currentVolumeLevel} m³</p>
+          <p>Variazione odierna = {ridracoliObj.ridraccoli.variazioneQuotaInvaso} cm</p>
         </div>
         <div className="percentage-char">
           <p>Percentuale invaso</p>
@@ -69,6 +73,15 @@ const App = () => {
             percent={tempAirForGauge}
             formatTextValue={value => value + '°C'}
           />
+        </div>
+      </div>
+
+
+      <div className="temperature-info">
+        <div className="info">
+          <p>Temperatura aria: {ridracoliObj.idrometeoRidraccoli.CtemperaturaAria}</p>
+          <p>Umidità = {ridracoliObj.idrometeoRidraccoli.Dumidita}</p>
+          <p>Pressione atmosferica: {ridracoliObj.idrometeoRidraccoli.DpressioneAtmosferica} mb</p>
         </div>
       </div>
 
