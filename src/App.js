@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import GaugeChart from 'react-gauge-chart'
-import './App.css';
+import {Button, Stack} from 'react-bootstrap';
+import './main.scss';
 
 const App = () => {
   const [ridracoliObj, setRidracoliObj] = useState({});
@@ -59,6 +60,14 @@ const App = () => {
         </div>
       </div>
 
+      <Stack direction="horizontal" gap={2}>
+  <Button as="a" variant="primary">
+    Button as link
+  </Button>
+  <Button as="a" variant="success">
+    Button as link
+  </Button>
+</Stack>
 
       <div className="temperature-info">
         <div className="info">
